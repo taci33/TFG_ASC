@@ -1,0 +1,153 @@
+﻿@page
+@model Curratelo.Pages.perfilesModel
+@{
+    Layout = "/Pages/Shared/_Layout.cshtml";
+}
+<div class="perfil-form-wrapper">
+<div class="perfil-form-container">
+    <form method="post" asp-page-handler="CrearPerfil">
+        <div class="perfil-form-group">
+            <label for="nombre" class="perfil-form-label">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="perfil-form-control" required>
+        </div>
+        <div class="perfil-form-group">
+            <label for="profesion" class="perfil-form-label">Profesión:</label>
+            <select id="profesion" name="profesion" class="perfil-form-control" required>
+                <option value="Electricista">Electricidad</option>
+                <option value="Fontanero">Fontanería</option>
+                <option value="Jardinero">Jardinería</option>
+                <option value="Limpieza">Limpieza</option>
+                <option value="Pintor">Pintura</option>
+                <option value="Reparaciones">Reparaciones</option>
+                <option value="Climatización">Climatización</option>
+                <option value="Albañil">Albañilería</option>
+                <option value="Carpintero">Carpintería</option>
+                <option value="Mudanzas">Mudanzas</option>
+                <option value="Plomería">Plomería</option>
+                <option value="Servicio de cocina">Servicio de cocina</option>
+                <option value="Servicio informático">Servicio informático</option>
+                <option value="Entrenamiento personal">Entrenamiento personal</option>
+                <option value="Traducción e interpretación">Traducción e interpretación</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="experiencia">Experiencia:</label>
+            <input type="text" id="experiencia" name="experiencia" class="perfil-form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="ubicacion">Ubicación:</label>
+            <input type="text" id="ubicacion" name="ubicacion" class="perfil-form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="perfil-form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" class="perfil-form-control" required></textarea>
+        </div>
+        <!-- Otros campos del formulario -->
+        <div class="perfil-form-group">
+            <button type="submit" class="perfil-form-btn">Crear perfil</button>
+        </div>
+    </form>
+</div>
+</div>
+@*<div class="perfil-form-container">
+    <form method="post" asp-page-handler="CrearPerfil">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="perfil-form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="profesion">Profesión:</label>
+            <select id="profesion" name="profesion" class="perfil-form-control" required>
+                <option value="Electricista">Electricidad</option>
+                <option value="Fontanero">Fontanería</option>
+                <option value="Jardinero">Jardinería</option>
+                <option value="Limpieza">Limpieza</option>
+                <option value="Pintor">Pintura</option>
+                <option value="Reparaciones">Reparaciones</option>
+                <option value="Climatización">Climatización</option>
+                <option value="Albañil">Albañilería</option>
+                <option value="Carpintero">Carpintería</option>
+                <option value="Mudanzas">Mudanzas</option>
+                <option value="Plomería">Plomería</option>
+                <option value="Servicio de cocina">Servicio de cocina</option>
+                <option value="Servicio informático">Servicio informático</option>
+                <option value="Entrenamiento personal">Entrenamiento personal</option>
+                <option value="Traducción e interpretación">Traducción e interpretación</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="experiencia">Experiencia:</label>
+            <input type="text" id="experiencia" name="experiencia" class="perfil-form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="ubicacion">Ubicación:</label>
+            <input type="text" id="ubicacion" name="ubicacion" class="perfil-form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="perfil-form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" class="perfil-form-control" required></textarea>
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="perfil-form-btn">Crear perfil</button>
+        </div>
+    </form>
+</div>*@
+
+@*<div style="margin-left:50em;">
+    <form method="post" asp-page-handler="CrearPerfil">
+    <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+    </div>
+    <div>
+            <label for="profesion">Profesión:</label>
+            <select id="profesion" name="profesion" required>
+                <option value="Electricista">Electricidad</option>
+                <option value="Fontanero">Fontanería</option>
+                <option value="Jardinero">Jardinería</option>
+                <option value="Limpieza">Limpieza</option>
+                <option value="Pintor">Pintura</option>
+                <option value="Reparaciones">Reparaciones</option>
+                <option value="Climatización">Climatización</option>
+                <option value="Albañil">Albañilería</option>
+                <option value="Carpintero">Carpintería</option>
+                <option value="Mudanzas">Mudanzas</option>
+                <option value="Plomería">Plomería</option>
+                <option value="Servicio de cocina">Servicio de cocina</option>
+                <option value="Servicio informático">Servicio informático</option>
+                <option value="Entrenamiento personal">Entrenamiento personal</option>
+                <option value="Traducción e interpretación">Traducción e interpretación</option>
+            </select>
+    </div>
+    <div>
+        <label for="experiencia">Experiencia:</label>
+        <input type="text" id="experiencia" name="experiencia" required>
+    </div>
+    <div>
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" required>
+    </div>
+    <div>
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" required></textarea>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+   
+    <div>
+        <button type="submit">Crear perfil</button>
+    </div>
+</form>
+</div>
+*@

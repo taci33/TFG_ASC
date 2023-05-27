@@ -1,0 +1,254 @@
+﻿/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    /*background-color: #f2f2f2;*/
+    margin: 0;
+    padding: 0;
+    display: flow;
+    min-height: 100vh;
+    background-color: #DAF5FF;
+}
+
+/*h1, h2, h3 {
+    color: #333;
+}
+    --penn-blue: #0D205Aff;
+--powder-blue: #97BCDFff;
+--columbia-blue: #D0DDECff;
+--pale-dogwood: #D3B8ADff;
+--rose-taupe: #7E4F52ff;
+--white: #FEFEFEff;
+*/
+
+/* Encabezado */
+header {
+    color: #0D205Aff;
+    background-color: #98bbe1;
+    background-image: url("../img/trabajos.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+    nav ul li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+/* Contenido principal */
+#search {
+    background-color: #DAF5FF;
+    padding-top: 10px;
+    /* position: center;*/
+    /* left: 22%;
+    top: 15%;*/
+    height: 100%;
+    /*width: 100%;*/
+
+    margin-left: 15em;
+    padding-left: 2em;
+    padding-bottom: 30em;
+    color: #0D205Aff;
+}
+
+form input[type="text"] {
+    width: 250px;
+    padding: 10px;
+}
+
+form select {
+    padding: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+}
+
+/* Pie de página */
+footer {
+    background-color: #98bbe1;
+    padding: 20px;
+    text-align: center;
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    border: 2px solid #98bbe1;
+    width: 100%;
+    height: 8em;
+}
+
+    footer p {
+        color: lightgrey;
+    }
+
+
+.sidebar {
+    background-color: #0D205Aff;
+    color: black;
+    padding: 20px;
+    /*width:100%;*/
+    height: 100%;
+    position: absolute;
+}
+
+    .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .sidebar ul li {
+            margin-bottom: 0px;
+        }
+
+            .sidebar ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+.sidebarD {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    /*width:100%;*/
+    height: 100%;
+    
+}
+.profile {
+    border: 1em ridge #0D205Aff;
+    margin-right: 2em;
+    padding: 2em;
+    width:auto;
+    height:auto;
+}
+/*.profile {
+   
+}*/
+
+.additional-section {
+    position: relative;
+    left: 20em;
+    bottom: 25em;
+    max-width:75em;
+}
+
+.comentarios {
+    position: relative;
+    left: 20em;
+    bottom: 25em;
+}
+.comment {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.comment-author {
+    font-weight: bold;
+}
+
+.comment-rating {
+    background-color: #f2f2f2;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+.comment-text {
+    margin-bottom: 5px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.comment-form button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .comment-form button:hover {
+        background-color: #45a049;
+    }
+
+.pagcoment{
+    width:100%;
+}
+.perfil-form-container {
+    margin-left: 50em;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 4px;
+    width: 500px; /* Ajusta el ancho del contenedor */
+}
+
+.perfil-form-control {
+    width: 100%;
+    padding: 10px; /* Ajusta el tamaño del padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.perfil-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.perfil-form-label {
+    margin-bottom: 5px;
+}
+
+
+
+.perfil-form-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    .perfil-form-btn:hover {
+        background-color: #45a049;
+    }
+
+    .perfil-form-btn:active {
+        background-color: #3e8e41;
+    }
+
+    .perfil-form-btn:focus {
+        outline: none;
+    }

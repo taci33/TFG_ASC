@@ -1,0 +1,161 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Curratelo</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+    @*<link rel="stylesheet" href="~/Curratelo.styles.css" asp-append-version="true" />*@
+</head>
+<body>
+    <header>
+        <h1>CURRATELO!!</h1>
+        <nav>
+            <ul>
+                <li><a class="nav-link text-dark" asp-area="" asp-page="/Index"><h4>Inicio</h4></a></li>
+                @if (SignInManager.IsSignedIn(User)){
+                <li><a class="nav-link text-dark" asp-area="" asp-page="/perfiles"><h4>Buscar Trabajadores</h4></a></li>
+                   
+                     <li><a class="nav-link text-dark" asp-area="" asp-page="/Crearperfil"><h4>Añadir trabajador</h4></a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-page="/logout"><h4>Logout</h4></a></li>
+                }
+                 @if (!SignInManager.IsSignedIn(User)){
+                <li><a class="nav-link text-dark" asp-area="" asp-page="/registrar"><h4>Registrarse</h4></a></li>
+                <li><a class="nav-link text-dark" asp-area="" asp-page="/logear"><h4>Iniciar Sesión</h4></a></li>
+                   
+                }
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">Todos los servicios</a></li>
+            <li><a href="#">Electricidad</a></li>
+            <li><a href="#">Fontanería</a></li>
+            <li><a href="#">Jardinería</a></li>
+            <li><a href="#">Limpieza</a></li>
+            <li><a href="#">Pintura</a></li>
+            <li><a href="#">Reparaciones</a></li>
+            <li><a href="#">Climatización</a></li>
+            <li><a href="#">Albañilería</a></li>
+            <li><a href="#">Carpintería</a></li>
+            <li><a href="#">Mudanzas</a></li>
+            <li><a href="#">Plomería</a></li>
+            <li><a href="#">Servicio de cocina</a></li>
+            <li><a href="#">Servicio informático</a></li>
+            <li><a href="#">Entrenamiento personal</a></li>
+            <li><a href="#">Traducción e interpretación</a></li>
+        </ul>
+
+        
+    </div>
+
+    @RenderBody()
+    @*
+        <section id="search">
+        
+      
+            <h2>Encuentra el trabajador autónomo que necesitas</h2>
+            <form>
+                <input type="text" placeholder="Buscar por servicio, ubicación, etc.">
+                <label for="servicios">Selecciona un servicio:</label>
+                <select name="servicios" id="servicios">
+                    <option value="">Todos los servicios</option>
+                    <option value="electricidad">Electricidad</option>
+                    <option value="fontaneria">Fontanería</option>
+                    <option value="jardineria">Jardinería</option>
+                    <option value="limpieza">Limpieza</option>
+                    <option value="pintura">Pintura</option>
+                    <option value="reparaciones">Reparaciones</option>
+                    <option value="climatizacion">Climatización</option>
+                    <button type="submit">Buscar</button>
+                </select>
+    
+            </form>
+            
+        <div class="profile">
+            <img src="/img/perfil1.png" alt="Profile Picture">
+            <h2>John Doe</h2>
+            <p>Profesión: Electricista</p>
+            <p>Experiencia: 5 años</p>
+            <p>Ubicación: Madrid, España</p>
+            <div class="additional-section">
+                <p><b>Comentarios: </b> </p><button type="submit">Nuevo comentario</button>
+                
+                    <div class="comment">
+                    <p>
+                       <b> - Laura Suarez:</b> 9,8 <br />
+                        "John Doe es un electricista increíblemente talentoso y profesional. <br />
+                        Tuve la suerte de contratarlo para instalar el sistema eléctrico en mi hogar y quedé impresionado con su conocimiento y habilidad."</p>
+                    </div>
+                    <div class="comment">
+                    <p><b> - Carlos Martinez:</b> 8,5 <br />"Contraté a John Doe para solucionar un problema eléctrico en mi oficina y estoy muy satisfecho con su trabajo.<br /> Fue rápido en identificar y resolver el problema, y se aseguró de explicarme cada paso del proceso. "</p>
+                    </div>
+                    <div class="comment">
+                    <p><b>- Ana Gonzalez.:</b> 10 <br />"No puedo decir lo suficiente sobre el excelente servicio que recibí de John Doe. <br />Tuve algunos problemas con mi sistema eléctrico en casa y él vino rápidamente y los solucionó de manera eficiente. " </b>
+                </div>
+
+            </div>
+           
+        </div>
+
+       
+           <div class="profile">
+                <img src="/img/perfil1.png" alt="Profile Picture">
+                <h2>John Doe</h2>
+                <p>Profesión: Electricista</p>
+                <p>Experiencia: 5 años</p>
+                <p>Ubicación: Madrid, España</p>
+                <p>Descripción: Soy un electricista profesional con experiencia en instalaciones eléctricas residenciales y comerciales. Ofrezco servicios confiables y de calidad.</p>
+            <p>Email: JohnDoe@gmail.com </p><button type="submit">Contactar</button>
+            <div class="additional-section">
+                <p>Puntuacion: 9,5/10</p>
+                <button type="submit" class="comentarios">Ver reseñas</button>
+            </div>
+       
+            </div>
+
+            <div class="profile">
+            <img src="/img/user3.png" alt="Profile Picture">
+                <h2>Jane Smith</h2>
+                <p>Profesión: Arquitecta</p>
+                <p>Experiencia: 8 años</p>
+                <p>Ubicación: Barcelona, España</p>
+                <p>Descripción: Soy una Arquitecta creativa y apasionada con experiencia en diseño de casas, industrias y oficinas. Me encanta diseñar el futuro de las personas.</p>
+            </div>
+
+            <div class="profile">
+            <img src="/img/user2.jpg" alt="Profile Picture">
+                <h2>Mike Johnson</h2>
+                <p>Profesión: Fontanero</p>
+                <p>Experiencia: 10 años</p>
+                <p>Ubicación: Valencia, España</p>
+                <p>Descripción: Soy un fontanero profesional con amplia experiencia en reparaciones, instalaciones y mantenimiento de sistemas de fontanería. Garantizo un trabajo de calidad y atención al detalle.</p>
+            </div> 
+           
+        </section>
+   *@
+    
+   
+
+    <footer class="footer">
+       
+            
+        <p>Curratelo - <a asp-area="" asp-page="/Privacy">Privacy</a></p>
+        
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

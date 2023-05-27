@@ -1,0 +1,48 @@
+﻿@page
+@model Curratelo.Pages.ComentariosModel
+@{
+    Layout = "/Pages/Shared/_Layout.cshtml";
+}
+<section id="search">
+    <!-- Aquí va el código HTML y el diseño de tu página -->
+    <div class="pagcoment">
+        <!-- Contenido dinámico generado a partir de los perfiles -->
+        @foreach (var perfil in Model.listaperfiles)
+        {
+            
+            <div class="profile">
+                <img src="/img/perfil1.png" alt="Profile Picture">
+                <h2>@perfil.nombre</h2>
+                <p>Profesión: @perfil.profesion</p>
+                <p>Experiencia: @perfil.experiencia años</p>
+                <p>Ubicación: @perfil.ubicacion</p>
+                <div class="additional-section">
+                    <p><b>Comentarios:</b></p>
+
+                    @foreach (var comentario in perfil.Comentarios)
+                    {
+                        if (perfil.id == comentario.TrabajadorId)
+                        {
+                            <div class="comment">
+                                <div class="comment-header">
+                                    <span class="comment-author">@comentario.Autor:</span>
+                                    <span class="comment-rating">@comentario.Puntuacion</span>
+                                </div>
+                                <div class="comment-text">@comentario.ComentarioTexto</div>
+                            </div>
+                        }
+                    }
+
+                    <form method="post" asp-page-handler="CrearComentario" asp-route-trabajadorId="@perfil.id" class="comment-form">
+                        <input type="text" name="autor" placeholder="Nombre" required />
+                        <input type="number" name="puntuacion" placeholder="Puntuación" required />
+                        <textarea name="comentario" placeholder="Escribe tu comentario" required></textarea>
+                        <button type="submit">Enviar comentario</button>
+                    </form>
+                  
+                </div>
+
+            </div>
+        }
+    </div>
+</section>

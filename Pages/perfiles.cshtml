@@ -1,0 +1,55 @@
+﻿
+@page
+
+@model Curratelo.Pages.perfilesModel
+
+@{
+    Layout = "/Pages/Shared/_Layout.cshtml";
+}
+
+<head>
+    <title>Tu plataforma de trabajadores autónomos</title>
+    <link rel="stylesheet" type="text/css" href="~/css/site.css">
+</head>
+
+<section id="search">
+
+    <h2>Encuentra el trabajador autónomo que necesitas</h2>
+    <form>
+        <input type="text" placeholder="Buscar por servicio, ubicación, etc.">
+        <label for="servicios">Selecciona un servicio:</label>
+        <select name="servicios" id="servicios">
+            <option value="">Todos los servicios</option>
+            <option value="electricidad">Electricidad</option>
+            <option value="fontaneria">Fontanería</option>
+            <option value="jardineria">Jardinería</option>
+            <option value="limpieza">Limpieza</option>
+            <option value="pintura">Pintura</option>
+            <option value="reparaciones">Reparaciones</option>
+            <option value="climatizacion">Climatización</option>
+            <button type="submit">Buscar</button>
+        </select>
+
+    </form>
+<!-- Aquí va el código HTML y el diseño de tu página -->
+<div class="">
+    <!-- Contenido dinámico generado a partir de los perfiles -->
+    @foreach (var perfil in Model.listaperfiles)
+    {
+        <div class="profile">
+            <img src="/img/perfil1.png" alt="Profile Picture">
+            <h2>@perfil.nombre</h2>
+            <p>Profesión: @perfil.profesion</p>
+            <p>Experiencia: @perfil.experiencia años</p>
+            <p>Ubicación: @perfil.ubicacion</p>
+            <p>Descripción: @perfil.descripcion</p>
+            <p>Email: @perfil.email</p>
+            <div>
+                    <p class="additional-section">Puntuación: @perfil.puntuacion</p>
+                    <a class="comentarios" asp-area="" asp-page="/Comentarios"><h4>Ver reseña</h4></a>
+                    
+            </div>
+        </div>
+    }
+</div>
+</section>
